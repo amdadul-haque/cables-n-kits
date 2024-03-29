@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        // 'hero': "url('../images/hero.jpg')",
+        'hero': "url('/images/hero.jpg')",
       },
       screens: {
         'xs': '350px',

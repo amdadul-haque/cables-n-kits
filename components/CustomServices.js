@@ -19,8 +19,8 @@ const CustomServices = () => {
                   <img src={service.img} alt={service.title} className='w-full h-60 object-cover rounded-md' />
                   <h3 className='text-xl sm:text-2xl font-bold text-primary'>{service.title}</h3>
                   <p className='text-center text-text-light'>{service.description}</p>
-                  <a href={service.learnMoreUrl}>
-                    <button className='bg-secondary text-gray-50 px-6 py-3 rounded-full font-semibold'>Learn More</button>
+                  <a href={service.learnMoreUrl} className='group'>
+                    <button className='bg-secondary group:hover:bg-opacity-0 text-gray-50 px-6 py-3 rounded-full font-semibold'>Learn More</button>
                   </a>
                 </div>
               ))
