@@ -10,6 +10,10 @@ module.exports = {
       backgroundImage: {
         'hero': "url('/images/hero.jpg')",
       },
+      fontFamily: {
+        robotoCondensed: ['Roboto Condensed', 'sans-serif'],
+        openSans: ['Open Sans', 'sans-serif'],
+      },
       screens: {
         'xs': '350px',
         'sm': '540px',
