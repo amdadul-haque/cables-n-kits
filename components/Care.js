@@ -39,7 +39,7 @@ const Care = () => {
           <div className='w-full flex flex-col lg:flex-row lg:justify-between gap-10'>
             <div className="w-full">
               <div>
-                <p className='text-xl text-secondary font-bold'>Take the Hassle Out of Sourcing and Assembling Components</p>
+                <p className='text-xl text-secondary-dark font-bold'>Take the Hassle Out of Sourcing and Assembling Components</p>
                 <p className=''>CK Care Third Party Maintenance allows you to enjoy incredible savings (up to
                   70%) compared to traditional OEM contracts without sacrificing on quality.</p>
                 <p className='mt-5'>Offering flexible contracts and comprehensive coverage for all major OEMs
@@ -49,7 +49,7 @@ const Care = () => {
                   and running!</p>
               </div>
               <div className='mt-10'>
-                <p className='text-xl text-secondary font-bold'>Benefits of CK Care Maintenance:</p>
+                <p className='text-xl text-secondary-dark font-bold'>Benefits of CK Care Maintenance:</p>
 
                 <div>
                   {benefits.map((benefit, index) => (
