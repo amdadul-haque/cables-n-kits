@@ -4,7 +4,7 @@ import MyContainer from './common/MyContainer'
 const Hero = () => {
   return (
     <>
-      <div className='bg-hero bg-center bg-no-repeat bg-cover'>
+      <div className='bg-gray-700 bg-hero bg-center bg-no-repeat bg-cover'>
         <MyContainer className="py-20 text-gray-50">
           <div className='max-w-screen-sm flex flex-col gap-5'>
             <h1 className='text-[40px] leading-snug text-gray-50 text-center sm:text-left font-robotoCondensed'>Introducing: CablesAndKits Services</h1>

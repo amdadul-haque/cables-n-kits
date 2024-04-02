@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import MyContainer from './common/MyContainer'
+import { ChevronDown } from 'lucide-react';
 
 const Navbar = () => {
   const topHeader = [
@@ -24,8 +25,9 @@ const Navbar = () => {
         <div className='flex justify-center md:hidden'>
           <button onClick={() => { setTopBarOpen(!topBarOpen) }} className='mx-auto'>
             {topBarOpen ?
-              <img src="./icons/chevron-down.svg" alt="close" /> :
               <img src="./icons/x.svg" alt="close" />
+              :
+              <ChevronDown />
             }
           </button>
         </div>
