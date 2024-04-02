@@ -49,7 +49,7 @@ const Navbar = () => {
         }
 
       </div>
-      <div className='w-full py-3 bg-gray-100'>
+      {/* <div className='w-full py-3 bg-gray-100'>
         <MyContainer>
           <div className='w-full flex justify-between items-center'>
             <a href="" className='block lg:hidden'>
@@ -60,7 +60,7 @@ const Navbar = () => {
                 <img src="./images/logo.png" alt="logo" className='h-8' />
               </a>
               <div className='flex items-center mr-3'>
-                <SearchIcon className='text-primary hidden md:inline' size={16} />
+                <SearchIcon className='text-primary hidden md:inline relative left-8' size={24} />
                 <input type="text" placeholder="Search" className='w-full xl:w-[500px] md:pl-9 h-8 md:h-10 px-3 border border-gray-300 border-r-0 rounded-md' />
                 <button className='px-2 md:px-5 h-8 md:h-10 -ml-1 bg-secondary-dark text-white rounded-r-md'>
                   <span className='hidden md:inline'>Search</span>
@@ -76,7 +76,6 @@ const Navbar = () => {
                     <Menu size={20} />
                 }
               </button>
-
               <div className='hidden right-0 md:flex items-center gap-2 md:gap-5 ml-3'>
                 <a href=""><User size={20} /></a>
                 <a href=""><HelpCircle size={20} /> </a>
@@ -85,7 +84,39 @@ const Navbar = () => {
             </div>
           </div>
         </MyContainer>
+      </div> */}
+      <div className='w-full py-3 bg-gray-100'>
+        <MyContainer>
+          <div className='w-full flex justify-between items-center gap-2'>
+            <a href="" className='block lg:hidden'>
+              <img src="./images/logo.png" alt="logo" className='h-8' />
+            </a>
+            <div className='flex items-center'>
+              <SearchIcon className='text-primary hidden md:inline relative left-8' size={24} />
+              <input type="text" placeholder="Search" className='w-full xl:w-[500px] md:pl-9 h-8 md:h-10 px-3 border border-gray-300 border-r-0 rounded-md' />
+              <button className='px-2 md:px-5 h-8 md:h-10 -ml-1 bg-secondary-dark text-white rounded-r-md'>
+                <span className='hidden md:inline'>Search</span>
+                <SearchIcon className="text-white md:hidden" size={16} />
+              </button>
+            </div>
+            <button className='md:hidden'
+              onClick={() => { setMobileNavOpen(!mobileNavOpen) }}>
+              {
+                mobileNavOpen ?
+                  <X size={16} />
+                  :
+                  <Menu size={20} />
+              }
+            </button>
+            <div className='hidden right-0 md:flex items-center gap-2 md:gap-5 ml-3'>
+              <a href=""><User size={20} /></a>
+              <a href=""><HelpCircle size={20} /> </a>
+              <a href=""> <ShoppingCart size={20} /> </a>
+            </div>
+          </div>
+        </MyContainer>
       </div>
+
       <div className='hidden md:block w-full py-3 bg-white'>
         <MyContainer className="w-full flex justify-around items-center">
           {
@@ -96,7 +127,7 @@ const Navbar = () => {
         </MyContainer>
       </div>
       {mobileNavOpen &&
-        <div className='absolute w-[50vw] bg-white right-0 h-full top-0'>
+        <div className='fixed w-[50vw] bg-white right-0 h-full top-0'>
           <div className='flex justify-end p-5'>
             <button onClick={() => { setMobileNavOpen(!mobileNavOpen) }} className=''>
               <X size={20} />
