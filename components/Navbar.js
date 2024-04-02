@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import MyContainer from './common/MyContainer'
 
 const Navbar = () => {
@@ -16,25 +17,38 @@ const Navbar = () => {
     { name: "Servers", link: "/" },
     { name: "Deals", link: "/" },
   ]
+  const [topBarOpen, setTopBarOpen] = useState(true)
   return (
     <>
       <div className='w-full py-3 bg-white'>
-        <MyContainer className="flex justify-end gap-4 items-center" >
-          {
-            topHeader.map((item, index) => (
-              <a key={index} href={item.link} className='text-sm font-medium text-primary border-b border-b-transparent hover:border-b-primary transition-all duration-300'>{item.name}</a>
-            ))
-          }
-          <span>
-            <a href="phone:8886220223" className='text-sm font-medium text-primary border-b border-b-transparent hover:border-b-primary transition-all duration-300 flex gap-2'>
-              <img src="./icons/phone.svg" alt="phone" />
-              888 622 0223</a>
-          </span>
-        </MyContainer>
+        <div className='flex justify-center md:hidden'>
+          <button onClick={() => { setTopBarOpen(!topBarOpen) }} className='mx-auto'>
+            {topBarOpen ?
+              <img src="./icons/chevron-down.svg" alt="close" /> :
+              <img src="./icons/x.svg" alt="close" />
+            }
+          </button>
+        </div>
+        {
+          topBarOpen &&
+          <MyContainer className={`flex flex-col md:flex-row justify-end gap-y-1 gap-x-4 items-center `} >
+            {
+              topHeader.map((item, index) => (
+                <a key={index} href={item.link} className='text-sm font-medium text-primary border-b border-b-transparent hover:border-b-primary transition-all duration-300'>{item.name}</a>
+              ))
+            }
+            <span>
+              <a href="phone:8886220223" className='text-sm font-medium text-primary border-b border-b-transparent hover:border-b-primary transition-all duration-300 flex gap-2'>
+                <img src="./icons/phone.svg" alt="phone" />
+                888 622 0223</a>
+            </span>
+          </MyContainer>
+        }
+
       </div>
       <div className='w-full py-3 bg-gray-100'>
         <MyContainer>
-          <div className='w-full flex justify-between items-center gap-20'>
+          <div className='w-full flex justify-between items-center'>
             <a href="" className='block lg:hidden'>
               <img src="./images/logo.png" alt="logo" className='w-[120px] lg:w-[200px] ' />
             </a>
@@ -70,3 +84,5 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+
